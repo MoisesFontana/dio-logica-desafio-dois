@@ -9,31 +9,35 @@ const rankTable = [
 //===============================================
 //=== Mude a quantidade de vitórias aqui ========
 //===============================================
-const numberOfVictories = 100;
+const numberOfVictories = 31;
 
 //============================================
 //=== Mude a quantidade de derrotas aqui =====
 //============================================
-const numberOfDefeats = 0;
+const numberOfDefeats = 10;
+
+if (numberOfVictories < 0) {
+   return console.log("A quantidade de vitórias deve ser maior ou igual a 0!");
+}
 
 
 function calculateWinningBalance(numberOfVictories, numberOfDefeats) {
-   return balance = numberOfVictories - numberOfDefeats;
+   return balance = numberOfVictories - numberOfDefeats
 }
 
 function calculateHeroRank(winningBalance) {
    if (winningBalance >= 101) {
-      return "Imortal";
+      return "Imortal"
    }
 
    for (let i = 0; i < rankTable.length; i++) {
       if (winningBalance <= rankTable[i].victories) {
-         return rankTable[i].rank;
+         return rankTable[i].rank
       }
    }
 }
 
-let winningBalance = calculateWinningBalance(numberOfVictories, numberOfDefeats);
-let heroRank = calculateHeroRank(winningBalance);
+let winningBalance = calculateWinningBalance(numberOfVictories, numberOfDefeats)
+let heroRank = calculateHeroRank(winningBalance)
 
 console.log("O Herói tem um saldo de **" + winningBalance + "** e está no nível **" + heroRank + "**!");
